@@ -9,3 +9,11 @@ def get_data(filename:str) -> dict:
     Returns:
         dict: JSON data
     """
+    x = filename.values()
+    for i in x:
+        if type(i) == list:
+            return i
+f = open('randomuser_data.json', 'r')
+a = f.read()
+b = json.loads(a)
+print(get_data(b))
